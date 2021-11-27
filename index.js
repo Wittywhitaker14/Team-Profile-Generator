@@ -61,4 +61,62 @@ const promptManager = () => {
     ]);
   };
 
+  const promptEngineer = () => {
+    return inquirer.prompt([
+        {
+        type: 'input',
+        name: 'name',
+        message: "What is your engineers name? (Required)",
+        validate: engineerName => {
+            if (engineerName) {
+            return true;
+            } else {
+            console.log("Please enter the engineers name!");
+            return false;
+            }
+            }
+        },
+        {
+        type: 'input',
+        name: 'ID',
+        message: "What is your engineers id? (Required)",
+        validate: engineerID => {
+            if (engineerID) {
+            return true;
+            } else {
+            console.log("Please enter the engineers id!");
+            return false;
+            }
+            }
+        },
+        {
+        type: 'input',
+        name: 'email',
+        message: "What is your engineers email? (Required)",
+        validate: engineerEmail => {
+            if (engineerEmail) {
+            return true;
+            } else {
+            console.log("Please enter the engineers email!");
+            return false;
+            }
+            }
+        },
+        {
+        type: 'input',
+        name: 'github',
+        message: "What is your engineers github username? (Required)",
+        validate: engineerGithub => {
+            if (engineerGithub) {
+            return true;
+            } else {
+            console.log("Please enter the engineers github username!");
+            return false;
+            }
+            }
+        }
+    ])
+  }
+
   promptManager();
+  promptEngineer();
