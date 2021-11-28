@@ -118,5 +118,63 @@ const promptManager = () => {
     ])
   }
 
+  const promptIntern = () => {
+      return inquirer.prompt([
+        {
+            type: 'input',
+            name: 'name',
+            message: "What is your interns name? (Required)",
+            validate: internName => {
+                if (internName) {
+                return true;
+                } else {
+                console.log("Please enter the interns name!");
+                return false;
+                }
+                }
+            },
+        {
+            type: 'input',
+            name: 'email',
+            message: "What is your interns email? (Required)",
+            validate: internEmail => {
+                if (internEmail) {
+                return true;
+                } else {
+                console.log("Please enter the interns email!");
+                return false;
+                }
+                }
+            },
+        {
+            type: 'input',
+            name: 'id',
+            message: "What is your interns id? (Required)",
+            validate: internID => {
+                if (internID) {
+                return true;
+                } else {
+                console.log("Please enter the interns id!");
+                return false;
+                }
+                }
+            },
+        {
+            type: 'input',
+            name: 'school',
+            message: "What is your interns school? (Required)",
+            validate: internSchool => {
+                if (internSchool) {
+                return true;
+                } else {
+                console.log("Please enter the interns school!");
+                return false;
+                }
+                }
+            },
+      ])
+  }
+
   promptManager();
   promptEngineer();
+  promptIntern();
